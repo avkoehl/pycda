@@ -1,0 +1,46 @@
+# Project Directory Structure
+configs/
+data/
+outputs/
+*.pdf
+cache/
+testing/
+
+# vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+
+# R
+*.rds
+.RData
+.Rhistory
+
+
+# Python
+__pycache__/
+*.py[cod]
+.python-version
+.ipynb_checkpoints
+
+
+# Operating System Metadata
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+.DS_Store
+.AppleDouble
+.LSOverride
+Network Trash Folder
+Temporary Items
+.apdisk
