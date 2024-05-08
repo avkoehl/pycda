@@ -49,6 +49,19 @@ class CostDistance:
         else:
             raise ValueError("Invalid return_type")
 
+
+    def cost_accumulation(self, sources, return_basins=True):
+        sources_list = self._validate_sources_input(sources)
+        cumulative_costs, basins = self.cdg.cost_accumulation(sources_list)
+
+        cumulative_costs = self._np_to_raster(cumulative_costs)
+
+        if return_basins:
+            basins = self._np_to_raster(basins)
+            return cumulative_costs, basins
+        else:
+            return cumulative_costs
+
     def _validate_sources_input(self, sources):
         # can be raster, ndarray, geoseries, or shapely point
         if isinstance(sources, np.ndarray):
@@ -76,18 +89,6 @@ class CostDistance:
         base = self.raster.copy()
         base.data = arr
         return base
-
-    def cost_accumulation(self, sources, return_basins=True):
-        sources_list = self._validate_sources_input(sources)
-        cumulative_costs, basins = self.cdg.cost_accumulation(sources_list)
-
-        cumulative_costs = self._np_to_raster(cumulative_costs)
-
-        if return_basins:
-            basins = self._np_to_raster(basins)
-            return cumulative_costs, basins
-        else:
-            return cumulative_costs
 
     def _point_to_rowcol(self, point):
         transform = rasterio.transform.AffineTransformer(self.raster.rio.transform())
