@@ -14,7 +14,7 @@ def neighbor_ids_to_sparse(neighbor_ids, ids):
     g = coo_matrix(
         (np.ones(neighbor_ids.size), (ids.flat, neighbor_ids.flat)),
         shape=(ids.size, ids.size),
-    ).to_csr()
+    ).tocsr()
     return g
 
 

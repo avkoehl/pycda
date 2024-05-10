@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "pycda"
 version = "0.1.0"
-description = "cost distance analysis for: least-cost path finding, cumulative cost trees, and cost-based allocation (basins)"
+description = "cost distance analysis (least-cost path, cumulative costs, and cost allocation) for rioxarray rasters"
 authors = ["Arthur Koehl <avkoehl@ucdavis.edu>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+geopandas = "^0.14.4"
 numpy = "^1.26.4"
-numba = "^0.59.1"
 scipy = "^1.13.0"
 rasterio = "^1.3.10"
 rioxarray = "^0.15.5"
@@ -17,9 +17,10 @@ scikit-image = "^0.23.2"
 
 [tool.poetry.group.dev.dependencies]
 matplotlib = "^3.8.4"
-geopandas = "^0.14.4"
+numba = "^0.59.1"
 ipython = "^8.24.0"
 jupyter = "^1.0.0"
+xarray-spatial = "^0.4.0"
 
 [build-system]
 requires = ["poetry-core"]

@@ -6,8 +6,8 @@ from shapely.geometry import Point
 from shapely.geometry import LineString 
 import xarray
 
-from pycda.cost_distance_grid import CostDistanceGrid
-from pycda.cost_distance_directional import CostDistanceDirectional
+from pycda.omni import CostDistanceGrid
+from pycda.directed import CostDistanceDirectional
 
 class CostDistance:
     """
@@ -55,9 +55,11 @@ class CostDistance:
         cumulative_costs, basins = self.cdg.cost_accumulation(sources_list)
 
         cumulative_costs = self._np_to_raster(cumulative_costs)
+        cumulative_costs.attrs['long_name'] = 'cost'
 
         if return_basins:
             basins = self._np_to_raster(basins)
+            basins.attrs['long_name'] = 'basin'
             return cumulative_costs, basins
         else:
             return cumulative_costs
