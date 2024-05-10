@@ -1,6 +1,4 @@
 Python Cost Distance Analysis
-
-Overview
 ===
 `pycda` is a Python package that performs cost-distance analysis on rioxarray rasters.
 Support for both omnidirectional cost-rasters and direction specific costs.
@@ -18,4 +16,7 @@ Features
 
 Usage
 ===
-See notebooks in the `/examples` directory
+Initialize the `CostDistance` class with either a roughness/cost raster or a directed graph. 
+Run `trace_path` or `cost_accumulation`.
+
+For more examples see the notebooks in the `/examples` directory
