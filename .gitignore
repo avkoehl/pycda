@@ -1,6 +1,5 @@
 # Project Directory Structure
 configs/
-data/
 outputs/
 *.pdf
 cache/
