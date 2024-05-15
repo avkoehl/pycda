@@ -19,6 +19,7 @@ def neighbor_ids_to_sparse(neighbor_ids, ids):
 
 
 def id_to_rowcol(idn, nrows, ncols):
+    # could use np.unravel_index?
     row_inds, col_inds = np.meshgrid(np.arange(nrows), np.arange(ncols), indexing="ij")
     row = row_inds.flatten()[idn]
     col = col_inds.flatten()[idn]
